@@ -1,0 +1,15 @@
+version: '2'
+services:
+  usermanager:
+    image: node
+    build: ./app
+    ports:
+     - "3000:3080"
+    volumes:
+     - .:/code
+
+    depends_on:
+     - mongo
+
+  mongo:
+    image: mongo
